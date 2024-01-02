@@ -35,7 +35,8 @@
     </td>
     <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
       <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Status</span>
-      <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold">{{Offre.status}}</span>
+      <span class="rounded  py-1 px-3 text-xs font-bold"
+            [ngClass]="{ 'bg-yellow-400  ': Offre.status === 'PENDING' , 'bg-green-400  ': Offre.status === 'ACCEPTED' , 'bg-red-400  ': Offre.status === 'REFUSED' }">{{Offre.status}}</span>
     </td>
     <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
       <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
