@@ -1,1 +1,76 @@
-<p>agent-comp works!</p>
+<!-- component -->
+<table class="border-collapse w-full my-20">
+  <thead>
+  <tr>
+    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Company name</th>
+    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">City</th>
+    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">JOB title</th>
+    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Salary</th>
+    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Profil</th>
+    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Status</th>
+    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let Offre of offres"  class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Company name</span>
+      {{Offre.society.name}}
+    </td>
+    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">City</span>
+      {{Offre.ville}}
+    </td>
+    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">JOB title</span>
+      {{Offre.profil}}
+    </td>
+    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Salary</span>
+      {{Offre.salaire}}$
+    </td>
+    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Profil</span>
+      {{Offre.study}}
+    </td>
+    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Status</span>
+      <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold">{{Offre.status}}</span>
+    </td>
+    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
+      <ng-container *ngIf="Offre.status === 'PENDING'; else acceptedRefused">
+        <a (click)="acceptOffer(Offre)" class="text-blue-400 hover:text-blue-600 underline">ACCEPT</a>
+        <a (click)="refuseOffer(Offre)" class="text-blue-400 hover:text-blue-600 underline pl-6">REFUSE</a>
+      </ng-container>
+      <ng-template #acceptedRefused>
+        <a *ngIf="Offre.status === 'ACCEPTED'" (click)="refuseOffer(Offre)" class="text-blue-400 hover:text-blue-600 underline pl-6">REFUSE</a>
+        <a *ngIf="Offre.status === 'REFUSED'" (click)="acceptOffer(Offre)" class="text-blue-400 hover:text-blue-600 underline">ACCEPT</a>
+      </ng-template>
+    </td>
+  </tr>
+
+
+  </tbody>
+</table>
+
+<div class="max-w-2xl mt-10 flex justify-center mx-auto">
+
+  <nav aria-label="Page navigation example">
+    <ul class="inline-flex -space-x-px">
+
+
+
+      <li>
+        <a *ngFor="let page of [].constructor(this.totalpages); let i = index"
+           (click)="GoToPage(i+1)"
+           class="bg-blue-50 border border-gray-300 text-blue-600 hover:bg-blue-100 hover:text-blue-700  py-2 px-3 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+          {{i+1}}
+        </a>
+
+      </li>
+
+    </ul>
+  </nav>
+
+</div>

@@ -12,7 +12,7 @@ export class OffresService {
   public addoffre(offre: any) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.post("http://localhost:8080/app/offre", offre, { headers });
+    return this.http.post("http://localhost:8080/app/Offres", offre, { headers });
   }
 
   public getoffres( page : number = 0,  size: number = 10){
@@ -20,6 +20,6 @@ export class OffresService {
   }
 
   public getoffreById(id: number): Observable<any> {
-    return this.http.get(`http://localhost:8080/app/offre?id=${id}`);
+    return this.http.get(`http://localhost:8080/app/Offres?id=${id}`);
   }
 }

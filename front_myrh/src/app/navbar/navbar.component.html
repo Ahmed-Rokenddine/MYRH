@@ -46,9 +46,10 @@
           Entreprises
         </a>
 
-        <a class="flex text-gray-600 hover:text-purple-600
-                    cursor-pointer transition-colors duration-300">
-          Pricing
+        <a href="/Agent" class="flex text-gray-600 hover:text-purple-600
+                    cursor-pointer transition-colors duration-300"
+           [ngClass]="{ 'font-semibold  ': currentComponentService.currentComponent === 'agent' }">
+          Agent
         </a>
 
         <a class="flex text-gray-600 hover:text-purple-600
