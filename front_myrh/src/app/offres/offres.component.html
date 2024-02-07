@@ -19,7 +19,9 @@
       <div class="flex justify-around ">
         <div class="flex items-center">
           <img class="h-10 w-12"  src="../assets/student5651.jpg" />
-          <p class=" text-sm font-medium text-gray-700">{{Offre.study}}</p>
+          <p class=" text-sm font-medium text-gray-700"*ngIf="Offre.study; else notRequired">{{Offre.study}}</p>
+
+          <ng-template #notRequired>Likan mer7ba</ng-template>
         </div>
         <div class="flex items-center">
           <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/256/1088/1088528.png" />
@@ -54,7 +56,7 @@
 
 </div>
 
-<div class="max-w-2xl flex justify-center mx-auto">
+<div class="max-w-2xl mt-10 flex justify-center mx-auto">
 
   <nav aria-label="Page navigation example">
     <ul class="inline-flex -space-x-px">

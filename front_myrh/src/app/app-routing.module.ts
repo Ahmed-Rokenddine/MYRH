@@ -4,6 +4,9 @@ import {RouterModule, Routes} from "@angular/router";
 import {OffresComponent} from "./offres/offres.component";
 import {OffreComponent} from "./offre/offre.component";
 import {AgentCompComponent} from "./agent-comp/agent-comp.component";
+import {EntreComponent} from "./entre/entre.component";
+import {LoginCompComponent} from "./login-comp/login-comp.component";
+import {DashComponent} from "./dash/dash.component";
 
 
 const routes: Routes = [
@@ -18,6 +21,9 @@ const routes: Routes = [
   },
   { path: 'Offres/:id', component: OffreComponent },
   { path: 'Agent', component: AgentCompComponent },
+  { path: 'Enreprises', component: EntreComponent },
+  { path: 'login', component: LoginCompComponent },
+  { path: 'Dash', component: DashComponent },
 ];
 @NgModule({
   declarations: [],

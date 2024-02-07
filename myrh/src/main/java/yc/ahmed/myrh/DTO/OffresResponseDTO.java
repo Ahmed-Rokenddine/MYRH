@@ -20,6 +20,7 @@ public class OffresResponseDTO {
     private String study;
     private String salaire;
     private String ville;
+    private SocietyResponseDTO Society;
     @Enumerated(EnumType.STRING)
     private OffresStatus status;
 

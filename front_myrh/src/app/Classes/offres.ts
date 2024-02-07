@@ -12,6 +12,8 @@ export class Offres {
     public ville:string
   // @ts-ignore
     public status:string
+
+
   society: any;
 
 

@@ -11,7 +11,7 @@ import {switchMap} from "rxjs";
 export class OffreComponent implements OnInit {
   offres: any;
   offreId!: number;
-
+  isPostulationAchieved: boolean = false;
 
 
   constructor(
@@ -28,7 +28,10 @@ export class OffreComponent implements OnInit {
     this.getoffreById();
     console.log(this.offres)
   }
-
+  postuler() {
+    console.log("postuler")
+    this.isPostulationAchieved = true;
+  }
 
 
   getoffreById() {

@@ -13,6 +13,9 @@ import { OffresComponent } from './offres/offres.component';
 import {RouterOutlet} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { EntreComponent } from './entre/entre.component';
+import { DashComponent } from './dash/dash.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AgentCompComponent,
     RegisterCompComponent,
     OffreComponent,
-    OffresComponent
+    OffresComponent,
+    EntreComponent,
+    DashComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
